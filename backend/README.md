@@ -48,3 +48,20 @@ cp target/usermanagement-0.0.1-SNAPSHOT.jar app.jar
 - `GET /user-api/users/{id}` - Retrieve a specific active user by ID
 - `DELETE /user-api/users/{id}` - Soft-delete a user (sets status to false)
 - `PATCH /user-api/users/{id}` - Reactivate a user (sets status to true)
+
+## Deploying to Cloud Platforms (Render, Railway, Heroku, etc.)
+
+Since you pushed the backend code to GitHub under `backend/`, you can deploy it to any standard Java supporting cloud environment:
+
+1. **Root Directory:** Set the Root Directory of your deployment service to `backend` (if you are deploying just the backend service).
+2. **Build Command:** Configure the service's build command to:
+   ```bash
+   ./mvnw clean package -DskipTests
+   ```
+3. **Start Command:** Configure the service's start command to:
+   ```bash
+   java -jar target/usermanagement-0.0.1-SNAPSHOT.jar
+   ```
+4. **Environment Variables:** Set any necessary environment variables, such as a remote MongoDB connection URI string if you aren't using localhost:
+   - To override properties dynamically, you can set standard Spring Boot env variables (e.g. `SPRING_DATA_MONGODB_URI` for the database connection string, or `SERVER_PORT` for a dynamic port assigned by platforms like Render/Heroku).
+
