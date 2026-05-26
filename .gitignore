@@ -1,0 +1,25 @@
+# Build directories
+backend/target/
+frontend/dist/
+frontend/node_modules/
+node_modules/
+
+# Local build artifacts
+backend/app.jar
+
+# Backups
+backend-node/
+
+# Local tools
+apache-maven-3.8.8/
+
+# IDE and OS files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+Thumbs.db
+.DS_Store
